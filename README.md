@@ -44,3 +44,35 @@ Maximum active work:
 - keep backlog prioritized
 - record active work in weekly notes
 - keep each skill tied to a deliverable
+
+## Memory Workflow
+
+Use `memory-context` for session tracking and `engineering-codex` for durable roadmap state.
+
+### What stays in memory-context
+
+- active discussion
+- decision drafts
+- session summaries
+- coding-session checkpoints
+- temporary ideas that are not yet committed to the roadmap
+
+### What gets promoted into engineering-codex
+
+- confirmed mission changes
+- approved roadmap updates
+- backlog items that matter long term
+- weekly review outcomes
+- stable project notes and templates
+
+### Rule of thumb
+
+If it still needs debate, keep it in `memory-context`.
+If it is stable enough to guide future work, write it into `engineering-codex`.
+
+### Example flow
+
+1. Discuss a new project idea in `memory-context`.
+2. Decide whether it belongs in the roadmap.
+3. If yes, add it to `roadmap/backlog.md` or a project page.
+4. Record the session summary in `memory-context`.

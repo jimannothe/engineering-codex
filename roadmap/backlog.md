@@ -2,14 +2,14 @@
 
 ## Now
 
-- [ ] Engineering Codex repo
 - [ ] Obsidian vault layout
-- [ ] Syncthing laptop-phone sync
 - [ ] GitHub remote
-- [ ] Intel NUC inventory
+- [ ] First weekly review
 
 ## Next
 
+- [ ] Syncthing laptop-phone sync
+- [ ] Intel NUC inventory
 - [ ] Ubuntu Server on NUC
 - [ ] SSH access
 - [ ] Docker install
@@ -22,13 +22,14 @@
 - [ ] Validation log parser
 - [ ] PostgreSQL lab
 - [ ] Networking refresher
+- [ ] AI research assistant
 - [ ] C++ notebook
 - [ ] Verilog basics
 - [ ] RISC-V CPU project
 - [ ] 3D printer restoration
 - [ ] Quadcopter design
-- [ ] AI research assistant
 - [ ] Quant research sandbox
+- [ ] AI Pixel Game Asset Generator MVP
 
 ## Background Projects
 

@@ -2,9 +2,9 @@
 
 ## Now
 
-- [ ] Obsidian vault layout
-- [ ] GitHub remote
-- [ ] First weekly review
+- [x] Obsidian vault layout
+- [x] GitHub remote
+- [x] First weekly review
 
 ## Next
 

@@ -44,6 +44,7 @@ Maximum active work:
 - keep backlog prioritized
 - record active work in weekly notes
 - keep each skill tied to a deliverable
+- use `templates/project-template.md` for larger projects and `templates/project-template-lite.md` for smaller ones
 
 ## Memory Workflow
 

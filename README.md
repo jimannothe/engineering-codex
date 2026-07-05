@@ -2,6 +2,13 @@
 
 Personal engineering roadmap and project system.
 
+For the long-term docs, see:
+
+- `projects/docs/foundation.md`
+- `projects/docs/academy.md`
+- `projects/docs/architecture.md`
+- `CURRENT_CONTEXT.md`
+
 ## Mission
 
 Become an AI-amplified systems engineer who can design, build, debug, and automate systems across software, hardware, infrastructure, and AI.
@@ -77,3 +84,12 @@ If it is stable enough to guide future work, write it into `engineering-codex`.
 2. Decide whether it belongs in the roadmap.
 3. If yes, add it to `roadmap/backlog.md` or a project page.
 4. Record the session summary in `memory-context`.
+
+## Current Context
+
+Use `CURRENT_CONTEXT.md` as the fast resumption file.
+
+- write the active project, goal, blockers, and next action
+- keep a date at the top so the freshest state is obvious
+- overwrite the file as work changes
+- do not delete it at the end of each session unless you are intentionally clearing stale context

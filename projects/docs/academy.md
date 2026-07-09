@@ -44,6 +44,53 @@ Each course or track should define:
 - thesis project
 - reflection
 
+## Codex Software Engineering
+
+This is the software engineering track for the Engineering Codex itself.
+
+The focus is not just writing code. The focus is building a maintainable system that a human can understand, extend, and debug later.
+
+### Core Topics
+
+- repo structure and boundaries
+- project intake and promotion
+- context handling and session resumption
+- modular code organization
+- testing strategy by risk level
+- logging and observability
+- dependency management
+- Git history and release discipline
+- command-driven workflows
+
+### Practical Standards
+
+- Keep the current state visible.
+- Keep the next action obvious.
+- Keep project files small and purpose-driven.
+- Prefer explicit connections between notes, code, and decisions.
+- Use helper commands when they reduce repetitive work.
+- Keep behavior easy to verify with tests or checks.
+
+### References
+
+Internal:
+
+- `projects/docs/engineering-os.md`
+- `projects/docs/architecture.md`
+- `projects/docs/foundation.md`
+- `templates/project-template.md`
+- `templates/project-template-lite.md`
+- `CURRENT_CONTEXT.md`
+
+External:
+
+- *A Philosophy of Software Design* by John Ousterhout
+- *Refactoring* by Martin Fowler
+- *The Pragmatic Programmer* by Andrew Hunt and David Thomas
+- *Working Effectively with Legacy Code* by Michael Feathers
+- *Clean Architecture* by Robert C. Martin
+- official language documentation for the stack used in a project
+
 ## Engineering Tracks
 
 - Foundations: Linux, Git, Bash, debugging, algorithms, data structures, mathematics

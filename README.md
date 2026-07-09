@@ -7,6 +7,7 @@ For the long-term docs, see:
 - `projects/docs/foundation.md`
 - `projects/docs/academy.md`
 - `projects/docs/architecture.md`
+- `projects/docs/engineering-os.md`
 - `CURRENT_CONTEXT.md`
 
 ## Mission

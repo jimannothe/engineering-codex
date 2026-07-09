@@ -17,7 +17,9 @@ The main repository and control center for the roadmap.
 - `pokemon-battle-sim`
 - `pokeshell-animation`
 - `cpp-performance-notebook`
+- `codex-software-engineering`
 
 ## Next Step
 
 - create the first weekly review
+- define the Codex Software Engineering project page

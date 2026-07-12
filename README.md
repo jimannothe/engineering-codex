@@ -12,7 +12,9 @@ For the long-term docs, see:
 
 ## Mission
 
-Become an AI-amplified systems engineer who can design, build, debug, and automate systems across software, hardware, infrastructure, and AI.
+Engineering Codex is an engineering operating system for curriculum development, project management, and buildable systems that compound into career and monetization potential.
+
+By becoming an AI-amplified systems engineer who can design, build, debug, and automate systems across software, hardware, infrastructure, and AI.
 
 ## Current Focus
 
@@ -91,6 +93,14 @@ If it is stable enough to guide future work, write it into `engineering-codex`.
 Use `CURRENT_CONTEXT.md` as the fast resumption file.
 
 - write the active project, goal, blockers, and next action
-- keep a date at the top so the freshest state is obvious
+- keep a date and hour at the top so the freshest state is obvious
 - overwrite the file as work changes
 - do not delete it at the end of each session unless you are intentionally clearing stale context
+
+Use `scripts/cdx` to work with it:
+
+```bash
+./scripts/cdx context show
+./scripts/cdx context edit
+./scripts/cdx context stamp
+```

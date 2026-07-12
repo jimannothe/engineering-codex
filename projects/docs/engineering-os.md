@@ -160,6 +160,12 @@ Good command examples:
 - promote backlog item
 - run review
 
+Current helper:
+
+- `scripts/cdx context show`
+- `scripts/cdx context edit`
+- `scripts/cdx context stamp`
+
 Commands should be small, predictable, and easy to inspect.
 
 ## Validation
@@ -174,6 +180,8 @@ Examples:
 - inspect the changed files for consistency
 
 If validation is not possible, say why.
+
+For `CURRENT_CONTEXT.md`, include the current date and hour in the `Updated:` line so the newest state is obvious at a glance.
 
 ## Definition Of Good Use
 

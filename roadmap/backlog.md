@@ -30,6 +30,7 @@
 - [ ] Quadcopter design
 - [ ] Quant research sandbox
 - [ ] AI Pixel Game Asset Generator MVP
+- [ ] Circle detection by Harmony Search Optimization
 
 ## Background Projects
 

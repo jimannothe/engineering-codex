@@ -1,0 +1,98 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+context_file="$repo_root/CURRENT_CONTEXT.md"
+
+usage() {
+  cat <<'EOF'
+cdx: helper for Engineering Codex
+
+usage:
+  cdx context [show|edit|stamp]
+
+commands:
+  context show   Print CURRENT_CONTEXT.md to stdout
+  context edit   Open CURRENT_CONTEXT.md in $EDITOR (or vi)
+  context stamp  Update the "Updated:" line to the current date and hour
+
+examples:
+  cdx context show
+  cdx context edit
+  cdx context stamp
+EOF
+}
+
+ensure_context_file() {
+  if [ ! -f "$context_file" ]; then
+    echo "missing context file: $context_file" >&2
+    exit 1
+  fi
+}
+
+stamp_context() {
+  local today
+  today="$(date '+%F %H:00')"
+
+  python3 - "$context_file" "$today" <<'PY'
+import pathlib
+import sys
+
+path = pathlib.Path(sys.argv[1])
+today = sys.argv[2]
+text = path.read_text()
+lines = text.splitlines()
+
+for i, line in enumerate(lines):
+    if line.startswith("Updated:"):
+        lines[i] = f"Updated: {today}"
+        break
+else:
+    lines.insert(1, f"Updated: {today}")
+
+path.write_text("\n".join(lines) + "\n")
+PY
+}
+
+if [ $# -lt 1 ]; then
+  usage
+  exit 1
+fi
+
+cmd="$1"
+shift || true
+
+case "$cmd" in
+  help|-h|--help)
+    usage
+    ;;
+
+  context)
+    subcmd="${1:-show}"
+    case "$subcmd" in
+      show)
+        ensure_context_file
+        cat "$context_file"
+        ;;
+      edit)
+        ensure_context_file
+        "${EDITOR:-vi}" "$context_file"
+        ;;
+      stamp)
+        ensure_context_file
+        stamp_context
+        cat "$context_file"
+        ;;
+      *)
+        echo "usage: codex context [show|edit|stamp]" >&2
+        exit 1
+        ;;
+    esac
+    ;;
+
+  *)
+    echo "unknown command: $cmd" >&2
+    usage >&2
+    exit 1
+    ;;
+esac

@@ -25,6 +25,8 @@ Primary guide: [`projects/docs/engineering-os.md`](/home/jman/engineering-codex/
 - [ ] define weekly review process
 - [ ] define project scoring rules
 - [ ] define project scaffolds and helper commands
+- [ ] define shared helper tools for environment, markdown, and Git workflows
+- [ ] decide which helpers belong in Engineering OS versus project-specific repos
 - [ ] define testing standards by project type
 - [ ] define Git and release rules for projects
 - [ ] define Engineering OS work todo for v0.1

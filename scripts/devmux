@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+usage() {
+  cat <<'EOF'
+devmux: repo-aware development helper
+
+usage:
+  devmux [status|context|git]
+
+commands:
+  status   Show branch, repo status, and latest commit
+  context  Show CURRENT_CONTEXT.md
+  git      Show a short git summary
+
+examples:
+  devmux status
+  devmux context
+  devmux git
+EOF
+}
+
+case "${1:-status}" in
+  help|-h|--help)
+    usage
+    ;;
+  status)
+    printf 'repo_root=%s\n' "$repo_root"
+    printf 'branch=%s\n' "$(git -C "$repo_root" branch --show-current)"
+    printf '\n== status ==\n'
+    git -C "$repo_root" status --short
+    printf '\n== latest commit ==\n'
+    git -C "$repo_root" log --oneline -1
+    ;;
+  context)
+    cat "$repo_root/CURRENT_CONTEXT.md"
+    ;;
+  git)
+    printf 'branch=%s\n' "$(git -C "$repo_root" branch --show-current)"
+    printf '\n== status ==\n'
+    git -C "$repo_root" status --short
+    printf '\n== recent history ==\n'
+    git -C "$repo_root" log --oneline -3
+    ;;
+  *)
+    echo "unknown command: ${1:-}" >&2
+    usage >&2
+    exit 1
+    ;;
+esac

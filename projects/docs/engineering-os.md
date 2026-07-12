@@ -165,6 +165,11 @@ Current helper:
 - `scripts/cdx context show`
 - `scripts/cdx context edit`
 - `scripts/cdx context stamp`
+- `scripts/devmux status`
+- `scripts/devmux context`
+- `scripts/devmux git`
+- `scripts/mdcheat`
+- `scripts/gitcheat`
 
 Commands should be small, predictable, and easy to inspect.
 

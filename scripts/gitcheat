@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  cat <<'EOF'
+gitcheat: git workflow cheat sheet
+
+usage:
+  gitcheat
+
+workflow:
+  status -> add -> commit -> branch -> push -> tag
+EOF
+}
+
+case "${1:-}" in
+  help|-h|--help)
+    usage
+    ;;
+  "")
+    cat <<'EOF'
+git status --short
+git add <files>
+git commit -m "message"
+git switch -c feat/example
+git push -u origin feat/example
+git tag -a v0.1.0 -m "release"
+
+Useful checks:
+- git branch --show-current
+- git log --oneline -5
+- git diff --stat
+EOF
+    ;;
+  *)
+    echo "unknown command: ${1:-}" >&2
+    usage >&2
+    exit 1
+    ;;
+esac

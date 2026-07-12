@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  cat <<'EOF'
+mdcheat: markdown cheat sheet
+
+usage:
+  mdcheat
+
+topics:
+  headings, lists, links, code blocks, checkboxes, tables
+EOF
+}
+
+case "${1:-}" in
+  help|-h|--help)
+    usage
+    ;;
+  "")
+    cat <<'EOF'
+# Heading 1
+## Heading 2
+### Heading 3
+
+- bullet
+- bullet
+
+1. numbered
+2. numbered
+
+[link text](path-or-url)
+
+```bash
+command
+```
+
+- [ ] checkbox
+- [x] checked box
+
+| Col A | Col B |
+| --- | --- |
+| 1 | 2 |
+EOF
+    ;;
+  *)
+    echo "unknown command: ${1:-}" >&2
+    usage >&2
+    exit 1
+    ;;
+esac

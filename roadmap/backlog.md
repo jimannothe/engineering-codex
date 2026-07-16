@@ -5,6 +5,9 @@
 - [x] Obsidian vault layout
 - [x] GitHub remote
 - [x] First weekly review
+- [x] Career Acceleration main project template
+- [ ] Build the first career fit matrix from the process control cybersecurity job
+- [ ] Create the first tracked offer subproject for that role
 
 ## Next
 

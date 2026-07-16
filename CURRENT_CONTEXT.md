@@ -1,20 +1,20 @@
 # Current Context
 
-Updated: 2026-07-14 23:36
+Updated: 2026-07-15 21:16
 
 ## Active Project
 
-- Project: Codex Shared Helpers
-- Goal: keep shared Engineering Codex workflow helpers small, explicit, and reusable
-- Milestone: `cdx`, `devmux`, `mdcheat`, and `gitcheat` checkpointed on `feat/codex-shared-helpers`
+- Project: Career Acceleration
+- Goal: build the first offer subproject and fit matrix from the process control cybersecurity job
+- Milestone: first career project, template, and first matrix example are in place
 
 ## Blockers
 
-- None
+- Target role list still needs to be defined
 
 ## Next Action
 
-- Move to the next project or extend the helper set only if a repeated workflow shows up.
+- Fill the first offer matrix and turn the job listing into a tracked subproject.
 
 ## Important Links
 
@@ -25,15 +25,16 @@ Updated: 2026-07-14 23:36
 
 ## Relevant Files
 
-- `scripts/cdx`
-- `scripts/devmux`
-- `scripts/mdcheat`
-- `scripts/gitcheat`
-- `projects/docs/engineering-os.md`
+- `projects/career-acceleration.md`
+- `projects/career-acceleration-process-control-cybersecurity.md`
+- `templates/career-offer-template.md`
+- `templates/project-template.md`
+- `CURRENT_CONTEXT.md`
 
 ## Last Decision
 
-- Shared helper tools belong to Engineering Codex because they support standard repo-wide workflows.
+- Main career work should be organized as one project with offer-specific subprojects and area-based tracks.
+- The first example should be the process control cybersecurity role, mapped through a fit matrix.
 
 ## Waiting On
 

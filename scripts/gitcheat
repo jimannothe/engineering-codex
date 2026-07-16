@@ -9,7 +9,7 @@ usage:
   gitcheat
 
 workflow:
-  status -> add -> commit -> branch -> push -> tag
+  status -> add -> commit -> branch -> merge main -> push -> tag
 EOF
 }
 
@@ -24,12 +24,29 @@ git add <files>
 git commit -m "message"
 git switch -c feat/example
 git push -u origin feat/example
+git switch main
+git pull --ff-only origin main
+git merge feat/example
+git push origin main
 git tag -a v0.1.0 -m "release"
 
 Useful checks:
 - git branch --show-current
 - git log --oneline -5
 - git diff --stat
+
+Merge flow:
+- finish work on your feature branch
+- commit or stash local changes
+- `git switch main`
+- `git pull --ff-only origin main`
+- `git merge <feature-branch>`
+- resolve conflicts if needed, then commit the merge
+- `git push origin main`
+
+If you want the feature branch on GitHub too:
+- `git push -u origin <feature-branch>`
+- keep the branch until the merge is verified, then delete it if desired
 EOF
     ;;
   *)

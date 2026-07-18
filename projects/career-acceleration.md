@@ -95,11 +95,11 @@ The matrix should answer:
 
 ## First Example
 
-The first concrete offer example is the process control cybersecurity role the user supplied.
+The first concrete offer example is the Emerson process control cybersecurity role the user supplied.
 
 Working title:
 
-- Process Control Cybersecurity / OT Security Engineer
+- Emerson Process Control Cybersecurity / OT Security Engineer
 
 Linked subproject:
 
@@ -187,14 +187,14 @@ External:
 - [ ] create one template per area strategy track
 - [ ] define weekly application cadence
 - [ ] define interview prep checklist
-- [ ] turn the process control cybersecurity role into the first tracked offer subproject
+- [ ] turn the Emerson process control cybersecurity role into the first tracked offer subproject
 - [ ] fill the first fit matrix with evidence, gaps, and actions
 
 ## Current Context
 
 Current task:
 
-Create the first tracked offer subproject and fit matrix for the process control cybersecurity role.
+Create the first tracked offer subproject and fit matrix for the Emerson process control cybersecurity role.
 
 Current blocker:
 

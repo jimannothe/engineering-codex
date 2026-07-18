@@ -339,6 +339,39 @@ Next tutor cycle:
 - explain packet flow and subnet behavior from memory
 - connect networking basics to OT segmentation and security
 
+## Session 3 Quiz Log
+
+### Best Responses
+
+- **Switch vs router:** a switch forwards frames within a LAN using MAC addresses, while a router moves traffic between different networks using IP addresses.
+- **DNS:** DNS translates names into IP addresses, which matters in OT because HMIs, historians, and engineering stations often rely on hostnames.
+- **ARP:** ARP maps an IP address to a MAC address on the local network.
+- **TCP vs UDP:** TCP is reliable and connection-oriented; UDP is connectionless and lighter-weight.
+- **VLAN:** a VLAN is a logical network segment on shared switching infrastructure, useful for separating OT zones or groups of devices.
+- **Firewall:** a firewall enforces allowed traffic between networks or zones; it is not a replacement for segmentation.
+- **Packet capture:** packet capture records actual network traffic so you can see what is happening instead of guessing from logs alone.
+
+### Corrections From Quiz Feedback
+
+- a switch is Layer 2, not Layer 22
+- a router connects networks; it does not generally “handle connection requests”
+- DNS maps names to IPs, not “IP to URL”
+- TCP is not secure by default; it is reliable and connection-oriented
+- VLANs segment networks, while firewalls enforce traffic policy
+- packet capture is the debugging method, not Packet Tracer
+
+### Harder Follow-Up Questions
+
+- A PLC and HMI are on the same subnet but cannot talk. Name three likely causes.
+- Why is segmentation especially important between business IT and control networks?
+- How would Wireshark help you debug a communication issue without guessing?
+
+## Session 3 Next Step
+
+- answer the three follow-up questions above
+- tie the answers to OT segmentation and troubleshooting
+- keep the response short enough to use in an interview
+
 ## Next Actions
 
 - [ ] complete the fit matrix with real evidence

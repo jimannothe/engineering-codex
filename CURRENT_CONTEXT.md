@@ -1,6 +1,6 @@
 # Current Context
 
-Updated: 2026-07-18 09:30
+Updated: 2026-07-18 12:43
 
 ## Active Project
 
@@ -19,7 +19,7 @@ Updated: 2026-07-18 09:30
 
 ## Next Action
 
-- Continue Emerson Session 3 with networking quiz answers, packet flow, and OT segmentation.
+- Answer the Session 3 follow-up questions: PLC/HMI same-subnet failures, business-to-control segmentation, and Wireshark debugging.
 
 ## Important Links
 
@@ -44,6 +44,7 @@ Updated: 2026-07-18 09:30
 - Session 1 of the ICS tutor cycle is logged in the Emerson role page.
 - Best responses from Session 1 are logged in the Emerson role page.
 - Session 3 of the networking tutor cycle is logged in the Emerson role page.
+- Session 3 quiz answers and follow-up questions are logged in the Emerson role page.
 
 ## Waiting On
 

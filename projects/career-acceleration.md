@@ -93,6 +93,21 @@ The matrix should answer:
 - what is missing
 - what needs to be built, learned, or rewritten
 
+## Default Prep Workflow
+
+For career-helper work, especially technical interview prep for an offer subproject, use Codex as an interactive tutor instead of asking for a long standalone chapter.
+
+Default cycle:
+
+1. Generate a concise explanation, usually 1 to 2 pages.
+2. Ask for analogies and real industrial examples.
+3. Draw the architecture or system yourself.
+4. Have Codex quiz you with progressively harder questions.
+5. Explain the topic back in your own words.
+6. Ask Codex to critique the explanation and identify gaps.
+
+Use this cycle by default when working on this type of career-helper project.
+
 ## First Example
 
 The first concrete offer example is the Emerson process control cybersecurity role the user supplied.

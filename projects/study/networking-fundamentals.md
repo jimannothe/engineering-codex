@@ -194,3 +194,9 @@ In Wireshark, look for:
 1. The HMI repeatedly sends ARP requests for the PLC but receives no ARP reply. What does that indicate, and which three things should be inspected next?
 2. Why is segmentation especially important between business IT and control networks?
 3. How would Wireshark help debug a communication issue without guessing?
+
+## Answers
+
+1. Repeated ARP requests with no reply usually mean the HMI can reach the local network but cannot discover the PLC's MAC address. The next things to inspect are the PLC power/state, the switch port and VLAN path, and the cabling or duplicate-IP situation.
+2. Segmentation matters because business IT and control networks have different risk levels and uptime needs. Separating them limits blast radius, reduces accidental or malicious access, and helps keep control traffic predictable and safe.
+3. Wireshark shows actual packets instead of assumptions. It can confirm whether ARP replies exist, whether TCP handshakes complete, whether retransmissions or resets occur, and whether the issue is Layer 2, Layer 3, or application-level.

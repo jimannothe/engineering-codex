@@ -1,6 +1,6 @@
 # Current Context
 
-Updated: 2026-07-18 12:43
+Updated: 2026-07-19 12:18
 
 ## Active Project
 
@@ -19,7 +19,7 @@ Updated: 2026-07-18 12:43
 
 ## Next Action
 
-- Answer the Session 3 follow-up questions: PLC/HMI same-subnet failures, business-to-control segmentation, and Wireshark debugging.
+- Rehearse the new DeltaV, industrial protocols, STAR, and final cheat sheet sections in that order.
 
 ## Important Links
 
@@ -42,9 +42,16 @@ Updated: 2026-07-18 12:43
 - The first example should be the Emerson process control cybersecurity role, mapped through a fit matrix.
 - The prep plan should focus on interview readiness, not field mastery.
 - Session 1 of the ICS tutor cycle is logged in the Emerson role page.
+- Session 2 of the ICS tutor cycle is logged in the Emerson role page.
 - Best responses from Session 1 are logged in the Emerson role page.
+- Session 4 of the cybersecurity tutor cycle is logged in the Emerson role page.
+- Session 4 answers for OT security controls are logged in the Emerson role page.
 - Session 3 of the networking tutor cycle is logged in the Emerson role page.
 - Session 3 quiz answers and follow-up questions are logged in the Emerson role page.
+- Behavioral STAR drafts are logged in the Emerson role page.
+- Interactive Practice Round 1 is logged in the Emerson role page.
+- Mock Interview Script is logged in the Emerson role page.
+- DeltaV, industrial protocols, and final cheat sheet sections are logged in the Emerson role page.
 
 ## Waiting On
 

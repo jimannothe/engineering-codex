@@ -45,6 +45,49 @@ It contains:
 - reusable templates for tailoring and follow-up
 - outcome tracking
 
+## Required Skills
+
+This is the current watchlist of the most requested skills across the reviewed jobs.
+
+Use it as a living priority list for study, resume tailoring, and portfolio work.
+
+| Skill | Seen In |
+| --- | --- |
+| Python | 7 jobs |
+| Bash | 4 jobs |
+| Documentation | 3 jobs |
+| SQL | 3 jobs |
+| CI/CD | 3 jobs |
+| APIs | 2 jobs |
+| SaaS | 2 jobs |
+| Networking | 2 jobs |
+| Troubleshooting | 2 jobs |
+| Manual testing | 2 jobs |
+| Web testing | 2 jobs |
+| API testing | 2 jobs |
+| Agile | 2 jobs |
+| Automation | 2 jobs |
+| Project management | 2 jobs |
+| CSV / validation | 2 jobs |
+| SDLC | 2 jobs |
+| Windows Server | 2 jobs |
+| DNS | 2 jobs |
+| Debugging | 2 jobs |
+
+Priority interpretation:
+
+- `Python`, `Bash`, `documentation`, `SQL`, and `CI/CD` are the broadest overlap skills
+- `APIs`, `SaaS`, and `troubleshooting` are the strongest bridge skills for support and automation roles
+- `manual testing`, `API testing`, and `web testing` matter mainly for the QA lane
+- `CSV / validation`, `SDLC`, and `project management` matter mainly for regulated validation roles
+
+Update rule:
+
+- add a skill when it appears in a new reviewed job
+- increase its count when the skill appears again
+- keep the list ordered by frequency, then by strategic value
+- move skills into separate lane-specific sublists only when a lane becomes dominant
+
 ## Learning Objectives
 
 After completing this project I should be able to:

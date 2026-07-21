@@ -43,6 +43,7 @@ It contains:
 - offer-specific subprojects
 - a fit matrix for each role
 - reusable templates for tailoring and follow-up
+- career hiring skills and STAR story bank
 - outcome tracking
 
 ## Required Skills
@@ -293,6 +294,7 @@ External:
 - [ ] create one template per area strategy track
 - [ ] define weekly application cadence
 - [ ] define interview prep checklist
+- [ ] build the career hiring skills project
 - [ ] turn the Movable Ink technical support role into the first tracked offer subproject
 - [ ] fill the first fit matrix with evidence, gaps, score, and actions
 

@@ -30,6 +30,7 @@ This epic is the strategy layer above the job search:
 - Career Acceleration
 - Career Search Operations
 - Career Path Optimization Guide
+- Career Hiring Skills
 - Movable Ink Technical Support Specialist
 - Teradyne Application Support Engineer
 - AbbVie Validation Engineer prep
@@ -43,6 +44,7 @@ This epic is the strategy layer above the job search:
 - [ ] build a validation-target resume variant
 - [ ] build a QA-target resume variant
 - [ ] create one support troubleshooting story bank
+- [ ] create one resume improvement and STAR story project
 - [ ] create one SQL and data-validation study block
 - [ ] create one SaaS support study block
 - [ ] create one CSV/GxP/FDA study block

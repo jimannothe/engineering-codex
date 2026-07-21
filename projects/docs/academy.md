@@ -185,6 +185,7 @@ Study:
 ### Possible Projects
 
 - support troubleshooting story bank
+- resume improvement and STAR story bank
 - SaaS issue reproduction notebook
 - small web/API test harness
 - validation evidence matrix

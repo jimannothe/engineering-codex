@@ -104,6 +104,112 @@ External:
 - Artificial Intelligence: machine learning, LLM applications, agents, RAG, automation
 - Quantitative Research: statistics, probability, time series, financial data, research automation
 
+## Career Income Optimization Track
+
+This is the career-focused academy track for moving from the current resume into higher-paid roles with the least extra work.
+
+Primary source of truth:
+
+- `epics/23-career-income-optimization.md`
+- `projects/study/career-path-optimization.md`
+- `projects/career-search-operations.md`
+
+### Purpose
+
+- identify the highest-return roles first
+- study only the gaps that actually block interviews
+- convert skill gaps into reusable proof
+- build a small number of targeted resume variants
+- keep the path toward income improvement explicit and measurable
+
+### Default Time Frame
+
+Use a 4-week baseline plan first, then optimize later from results.
+
+- **Week 1:** support and systems fundamentals
+- **Week 2:** SaaS support and troubleshooting language
+- **Week 3:** validation or QA specialization
+- **Week 4:** project proof, resume tailoring, and application push
+
+This time frame is intentionally adjustable. If a lane proves stronger, shorten or extend the plan based on conversion results.
+
+### Study Blocks
+
+#### Support / Systems Block
+
+Study:
+
+- Linux administration basics
+- Windows administration basics
+- DNS, DHCP, Active Directory, SSH
+- PostgreSQL and MongoDB basics
+- Apache and Nginx basics
+- Jenkins and CI/CD vocabulary
+- ticket triage, escalation, and incident handling
+
+#### SaaS Support Block
+
+Study:
+
+- REST vs GraphQL
+- OAuth, SAML, SCIM
+- browser debugging terms
+- HTTP status codes
+- logs, HAR files, cookies, and sessions
+- customer issue reproduction
+
+#### Validation Block
+
+Study:
+
+- CSV lifecycle
+- GxP
+- FDA 21 CFR Part 11 and Part 820
+- GAMP
+- URS, FRS, DS, RTM
+- IQ, OQ, PQ, UAT
+- change control and risk-based validation
+
+#### QA Block
+
+Study:
+
+- manual testing workflow
+- exploratory testing
+- test plans and test cases
+- reproducible bug reports
+- web and API testing basics
+- SQL for validation
+- CI/CD release-readiness language
+
+### Possible Projects
+
+- support troubleshooting story bank
+- SaaS issue reproduction notebook
+- small web/API test harness
+- validation evidence matrix
+- manual QA bug-report portfolio
+- SQL validation notebook
+- resume-tailoring variants by role family
+- application tracker with scoring and follow-up
+
+### Milestones
+
+- **Milestone 1:** choose one primary lane
+- **Milestone 2:** complete one study block and one proof artifact
+- **Milestone 3:** create a tailored resume for the highest-return role family
+- **Milestone 4:** apply to the top target roles with the strongest evidence
+
+### Done Criteria
+
+This track is useful when I can:
+
+- explain why a role is target, maybe, or skip
+- show one reusable artifact for the chosen lane
+- tailor the resume without starting over
+- apply to higher-value roles with lower prep cost
+- update the plan based on response rate and interview feedback
+
 ## Thesis Model
 
 Each track should eventually support a thesis-level project.

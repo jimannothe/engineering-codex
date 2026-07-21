@@ -48,13 +48,32 @@ What evidence do I already have?
 
 ---
 
-## Matrix
+## CV Validation
 
-Use this section to map the job description to the current proof set.
+Use this section to compare the posting directly against the current CV and proof set.
 
-| Requirement | Evidence | Gap | Action |
+| Requirement | CV Evidence | Gap | Score (0-2) | Action |
 | --- | --- | --- | --- |
 |  |  |  |  |
+
+---
+
+## Score and Decision
+
+- **Total Score:**
+- **Decision:** target / maybe / skip
+- **Why:**
+
+---
+
+## Gap Plan
+
+Convert the gaps into concrete actions.
+
+- [ ] close skill gap
+- [ ] close evidence gap
+- [ ] close wording gap
+- [ ] close interview-prep gap
 
 ---
 

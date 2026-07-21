@@ -39,6 +39,7 @@ Career Acceleration is the parent project.
 It contains:
 
 - area strategy tracks
+- career search operations
 - offer-specific subprojects
 - a fit matrix for each role
 - reusable templates for tailoring and follow-up
@@ -93,6 +94,15 @@ The matrix should answer:
 - what is missing
 - what needs to be built, learned, or rewritten
 
+After the matrix, each offer should also be:
+
+- scored against the current CV
+- assigned a target / maybe / skip decision
+- converted into a gap list
+- converted into a concrete action plan
+
+This is the standard loop for every position.
+
 ## Default Prep Workflow
 
 For career-helper work, especially technical interview prep for an offer subproject, use Codex as an interactive tutor instead of asking for a long standalone chapter.
@@ -110,24 +120,24 @@ Use this cycle by default when working on this type of career-helper project.
 
 ## First Example
 
-The first concrete offer example is the Emerson process control cybersecurity role the user supplied.
+The first concrete offer example is the Movable Ink Technical Support Specialist role.
 
 Working title:
 
-- Emerson Process Control Cybersecurity / OT Security Engineer
+- Movable Ink Technical Support Specialist
 
 Linked subproject:
 
-- `projects/career-acceleration-process-control-cybersecurity.md`
+- `projects/jobs/movable_techSupport.md`
 
 Initial matrix themes:
 
-- OT and process control experience
-- cybersecurity tool integration and testing
-- defense-in-depth and permissions
-- networking, firewalls, and packet analysis
-- standards and frameworks such as IEC 62443, NIST, and NERC
-- customer communication, training, and documentation
+- technical support ownership
+- troubleshooting and root cause analysis
+- documentation and knowledge sharing
+- web app and browser debugging
+- APIs, auth, and relational data
+- customer communication and escalation handling
 
 ## Offer Model
 
@@ -157,6 +167,39 @@ Example areas:
 - validation / automation
 - AI engineering
 - hardware-adjacent systems
+
+## Search Operations
+
+Use `projects/career-search-operations.md` as the active search engine.
+
+It handles:
+
+- sourcing
+- scoring
+- ranking
+- tailoring
+- applying
+- follow-up
+- feedback loops
+
+The search should be optimized across multiple values:
+
+- fit
+- compensation
+- growth
+- probability
+- effort
+- learning value
+
+The search system should bias toward the highest expected return per unit time, not the largest number of applications.
+
+For each role, the search system should run this loop:
+
+1. Compare the role against the current CV.
+2. Extract the evidence match and the missing pieces.
+3. Score the role.
+4. Convert the gaps into a concrete action plan.
+5. Decide whether to apply, prep, or skip.
 
 ## Investigation
 
@@ -198,26 +241,31 @@ External:
 - [ ] define target role categories
 - [ ] list priority companies and postings
 - [ ] inventory resume, LinkedIn, and portfolio assets
+- [ ] define weighted scoring for target roles
+- [ ] add CV validation to every offer subproject
+- [ ] add gap-to-action planning to every offer subproject
+- [ ] create a ranked target list with target/maybe/skip labels
+- [ ] connect recruiter messages to the search operations system
 - [ ] create one template per offer subproject
 - [ ] create one template per area strategy track
 - [ ] define weekly application cadence
 - [ ] define interview prep checklist
-- [ ] turn the Emerson process control cybersecurity role into the first tracked offer subproject
-- [ ] fill the first fit matrix with evidence, gaps, and actions
+- [ ] turn the Movable Ink technical support role into the first tracked offer subproject
+- [ ] fill the first fit matrix with evidence, gaps, score, and actions
 
 ## Current Context
 
 Current task:
 
-Create the first tracked offer subproject and fit matrix for the Emerson process control cybersecurity role.
+Build the active job-search operating system and connect it to the Movable Ink offer subproject.
 
 Current blocker:
 
-The target role list is not finalized yet, but the first example role is defined.
+The target role list is not finalized yet, but the first example role and the active search system are defined.
 
 Next action:
 
-Draft the first offer matrix and connect it to the main project page.
+Use the search operations system to rank the next set of roles and then draft the next highest-value offer matrix.
 
 Estimated time:
 
@@ -232,9 +280,17 @@ Every offer should test a hypothesis:
 - Which area produces the strongest response rate?
 - Which interview gaps repeat?
 
+Every search cycle should test a hypothesis:
+
+- Does the scoring model route time toward better opportunities?
+- Which job families produce the best response rate?
+- Which resume angle gets the strongest replies?
+- Which prep topics create the biggest interview lift?
+
 ## Decisions
 
 - Use one main project to coordinate the job search.
+- Use a separate search operations system to rank and route work.
 - Treat each offer as a subproject instead of a one-off application.
 - Organize strategy by area so the search stays focused.
 - Prefer reusable templates over rewriting the same materials.
@@ -251,6 +307,7 @@ Every offer should test a hypothesis:
 How will I prove this project works?
 
 - I can create a new offer subproject from the template.
+- I can rank roles before spending time on them.
 - Each offer has a clear next action and status.
 - Application materials are easy to tailor.
 - I can see which areas are producing results.
@@ -262,6 +319,7 @@ How will I prove this project works?
 The project is complete when:
 
 - target role areas are defined
+- the search operations system is in use
 - offer subprojects are tracked consistently
 - materials are reusable and easy to tailor
 - interview prep is organized

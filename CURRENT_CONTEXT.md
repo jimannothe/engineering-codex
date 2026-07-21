@@ -1,57 +1,46 @@
 # Current Context
 
-Updated: 2026-07-19 12:18
+Updated: 2026-07-21
 
 ## Active Project
 
 - Project: Career Acceleration
-- Goal: build the first offer subproject and fit matrix from the Emerson process control cybersecurity job
-- Milestone: first career project, template, and first matrix example are in place
+- Goal: build the active job-search operating system and use it to rank and pursue offers
+- Milestone: search operations and the first tracked offer subproject are in place
+- First tracked offer subproject: Movable Ink Technical Support Specialist
 
-## Interview Window
+## Resume State
 
-- Target interview: Monday, July 20, 2026 at 1:00 PM
-- Preparation window: Saturday, July 18 through Monday morning
-
-## Blockers
-
-- Target role list still needs to be defined
+- Master resume source of truth is in place
+- Resume skeleton is in place
+- Latest CV source of truth has been captured in the master profile
+- Movable Ink support-target resume has been created
 
 ## Next Action
 
-- Rehearse the new DeltaV, industrial protocols, STAR, and final cheat sheet sections in that order.
+- Rank the next roles in the search system and build the next highest-value offer subproject.
+- Use the resume skeleton to draft target-specific versions when needed.
 
 ## Important Links
 
-- `README.md`
-- `projects/docs/foundation.md`
-- `projects/docs/academy.md`
-- `projects/docs/architecture.md`
-
-## Relevant Files
-
 - `projects/career-acceleration.md`
-- `projects/career-acceleration-process-control-cybersecurity.md`
-- `templates/career-offer-template.md`
-- `templates/project-template.md`
-- `CURRENT_CONTEXT.md`
+- `projects/career-search-operations.md`
+- `projects/jobs/movable_techSupport.md`
+- `docs/resume/master-jimmy-profile.tex`
+- `docs/resume/movable-ink-tech-support-target.tex`
+- `templates/resume-skeleton.tex`
 
 ## Last Decision
 
 - Main career work should be organized as one project with offer-specific subprojects and area-based tracks.
-- The first example should be the Emerson process control cybersecurity role, mapped through a fit matrix.
+- The first tracked offer subproject should be Movable Ink Technical Support Specialist.
+- Every offer should now follow the same loop: validate against the CV, score it, extract gaps, and turn the gaps into an action plan.
+- Experiment 1 ranked the current roles as Movable Ink first, LanceSoft second, and Stryker third.
+- Zuora SRE II is a separate maybe-target that sits below Movable Ink and near LanceSoft because the SRE stack gap is still large.
 - The prep plan should focus on interview readiness, not field mastery.
-- Session 1 of the ICS tutor cycle is logged in the Emerson role page.
-- Session 2 of the ICS tutor cycle is logged in the Emerson role page.
-- Best responses from Session 1 are logged in the Emerson role page.
-- Session 4 of the cybersecurity tutor cycle is logged in the Emerson role page.
-- Session 4 answers for OT security controls are logged in the Emerson role page.
-- Session 3 of the networking tutor cycle is logged in the Emerson role page.
-- Session 3 quiz answers and follow-up questions are logged in the Emerson role page.
-- Behavioral STAR drafts are logged in the Emerson role page.
-- Interactive Practice Round 1 is logged in the Emerson role page.
-- Mock Interview Script is logged in the Emerson role page.
-- DeltaV, industrial protocols, and final cheat sheet sections are logged in the Emerson role page.
+- Career Search Operations is in place.
+- Resume source of truth and skeleton are in place.
+- The Movable Ink tailored resume is ready for application work.
 
 ## Waiting On
 

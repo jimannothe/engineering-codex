@@ -1,13 +1,14 @@
 # Current Context
 
-Updated: 2026-07-21
+Updated: 2026-07-25
 
 ## Active Project
 
 - Project: Career Acceleration
 - Goal: build the active job-search operating system and use it to rank and pursue offers
-- Milestone: search operations and the first tracked offer subproject are in place
+- Milestone: search operations, the skill tracker, and the hiring-skills project are in place
 - First tracked offer subproject: Movable Ink Technical Support Specialist
+- Current focus: resume improvement and STAR story bank for support, validation, and automation roles
 
 ## Resume State
 
@@ -15,19 +16,26 @@ Updated: 2026-07-21
 - Resume skeleton is in place
 - Latest CV source of truth has been captured in the master profile
 - Movable Ink support-target resume has been created
+- Teradyne support-target resume has been created
+- Haystack software-engineer target resume has been created
 
 ## Next Action
 
+- Turn the strongest experience into clearer resume bullets and defensible interview stories.
+- Use the career skill tracker to keep the most requested skills current.
 - Rank the next roles in the search system and build the next highest-value offer subproject.
-- Use the resume skeleton to draft target-specific versions when needed.
 
 ## Important Links
 
 - `projects/career-acceleration.md`
 - `projects/career-search-operations.md`
+- `projects/career-skill-tracker.md`
+- `projects/career-hiring-skills.md`
 - `projects/jobs/movable_techSupport.md`
 - `docs/resume/master-jimmy-profile.tex`
 - `docs/resume/movable-ink-tech-support-target.tex`
+- `docs/resume/teradyne-app-support-target.tex`
+- `docs/resume/haystack-software-engineer-target.tex`
 - `templates/resume-skeleton.tex`
 
 ## Last Decision
@@ -41,6 +49,8 @@ Updated: 2026-07-21
 - Career Search Operations is in place.
 - Resume source of truth and skeleton are in place.
 - The Movable Ink tailored resume is ready for application work.
+- The career skill tracker and hiring-skills project are in place.
+- The Teradyne and Haystack tailored resumes are ready for application work.
 
 ## Waiting On
 

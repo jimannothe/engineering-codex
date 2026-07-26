@@ -31,7 +31,8 @@ Track the most requested skills across reviewed jobs and use that list to drive 
 | Agile | 2 | Validation, QA, Support | Frequent team process expectation | Prepare one sprint collaboration story |
 | Automation | 2 | Support, Validation, Automation | Central to high-return roles | Keep one reusable automation example |
 | Project management | 2 | Validation, Support | Needed for multi-workstream roles | Prepare one prioritization story |
-| CSV / validation | 2 | Validation | Core to regulated validation jobs | Study CSV lifecycle and deliverables |
+| CSV | 2 | Validation | Core to regulated validation jobs | Study CSV lifecycle and deliverables |
+| Validation | 2 | Validation | Core to regulated validation jobs | Study validation lifecycle and deliverables |
 | SDLC | 2 | Validation, QA, Automation | Common in software and quality jobs | Review SDLC language and stages |
 | Windows Server | 2 | Support, Systems | Common in support and infrastructure roles | Review admin and troubleshooting basics |
 | DNS | 2 | Support, Systems, Networking | Fundamental infrastructure skill | Keep troubleshooting examples ready |

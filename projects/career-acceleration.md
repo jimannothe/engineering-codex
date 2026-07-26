@@ -69,7 +69,8 @@ Use it as a living priority list for study, resume tailoring, and portfolio work
 | Agile | 2 jobs |
 | Automation | 2 jobs |
 | Project management | 2 jobs |
-| CSV / validation | 2 jobs |
+| CSV | 2 jobs |
+| Validation | 2 jobs |
 | SDLC | 2 jobs |
 | Windows Server | 2 jobs |
 | DNS | 2 jobs |
@@ -80,7 +81,7 @@ Priority interpretation:
 - `Python`, `Bash`, `documentation`, `SQL`, and `CI/CD` are the broadest overlap skills
 - `APIs`, `SaaS`, and `troubleshooting` are the strongest bridge skills for support and automation roles
 - `manual testing`, `API testing`, and `web testing` matter mainly for the QA lane
-- `CSV / validation`, `SDLC`, and `project management` matter mainly for regulated validation roles
+- `CSV`, `Validation`, `SDLC`, and `project management` matter mainly for regulated validation roles
 
 Update rule:
 
@@ -272,6 +273,7 @@ Internal:
 - `templates/project-template-lite.md`
 - `CURRENT_CONTEXT.md`
 - `roadmap/backlog.md`
+- `projects/docs/job-ingest-manual.md`
 
 External:
 

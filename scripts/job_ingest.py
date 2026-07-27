@@ -54,6 +54,12 @@ SKILL_BUCKETS = {
     "Security / auth": ["oauth", "saml", "scim", "auth", "ssO".lower()],
     "Cybersecurity": ["cyber security", "network security", "application security", "cyber exposure"],
     "ServiceNow": ["servicenow"],
+    "Dell Boomi": ["dell boomi", "boomi"],
+    "NetSuite": ["netsuite"],
+    "Salesforce": ["salesforce"],
+    "ADP": ["adp"],
+    "ChatGPT Enterprise": ["chatgpt enterprise"],
+    "Claude": ["claude"],
 }
 
 NOISE_LINE_PATTERNS = [
@@ -182,6 +188,22 @@ RESUME_SKILL_TAGS = {
     "Documentation",
     "Testing",
     "Support",
+}
+
+SPECIFIC_TOOL_KEYWORDS = {
+    "Dell Boomi": ["dell boomi", "boomi"],
+    "NetSuite": ["netsuite"],
+    "Salesforce": ["salesforce"],
+    "ADP": ["adp"],
+    "ChatGPT Enterprise": ["chatgpt enterprise"],
+    "Claude": ["claude"],
+    "ServiceNow": ["servicenow"],
+    "Docker / Kubernetes": ["docker", "kubernetes"],
+    "Boomi / iPaaS": ["ipaas", "integration platform"],
+    "Selenium": ["selenium"],
+    "Cypress": ["cypress"],
+    "Jira": ["jira"],
+    "Confluence": ["confluence"],
 }
 
 
@@ -348,6 +370,27 @@ def derive_missing_skills(job_skills: list[str], experiences: list[str]) -> list
     return missing
 
 
+def extract_specific_tools(job_text: str) -> list[str]:
+    norm = normalize(job_text)
+    found: list[str] = []
+    for label, needles in SPECIFIC_TOOL_KEYWORDS.items():
+        if any(needle in norm for needle in needles):
+            found.append(label)
+    return found
+
+
+def score_specific_tool_coverage(job_text: str, resume_skills: set[str]) -> tuple[int, list[str]]:
+    norm = normalize(job_text)
+    found_tools: list[str] = []
+    penalty = 0
+    for label, needles in SPECIFIC_TOOL_KEYWORDS.items():
+        if any(needle in norm for needle in needles):
+            found_tools.append(label)
+            if label.lower() not in resume_skills:
+                penalty += 4
+    return penalty, found_tools
+
+
 def build_star_prompts(experiences: list[str]) -> list[str]:
     prompts: list[str] = []
     for experience in experiences:
@@ -471,6 +514,21 @@ def build_summary(html_path: Path, source_url: str | None = None) -> JobSummary:
         fit_score = max(fit_score, min(95, experience_score(match_text, label)))
     if not fit_score:
         fit_score = 45 if skills else 25
+
+    resume_skill_norm = {skill.lower() for skill in RESUME_SKILL_TAGS}
+    specific_penalty, specific_tools = score_specific_tool_coverage(match_text, resume_skill_norm)
+    fit_score -= specific_penalty
+
+    if specific_tools and specific_penalty:
+        fit_score -= 4
+
+    if specific_tools and any(tool in {"Dell Boomi", "NetSuite", "Salesforce", "ADP", "ChatGPT Enterprise", "Claude"} for tool in specific_tools):
+        fit_score = min(fit_score, 85)
+
+    if "integration engineer" in normalize(match_text) and any(tool in {"Dell Boomi", "NetSuite", "Salesforce", "ADP"} for tool in specific_tools):
+        fit_score = min(fit_score, 84)
+
+    fit_score = max(0, min(95, fit_score))
 
     if not relevant_experiences:
         relevant_experiences = experience

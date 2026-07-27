@@ -15,7 +15,7 @@
 
 ## Fit Score
 
-- Score: 69/100
+- Score: 61/100
 
 ## Extracted Skills
 

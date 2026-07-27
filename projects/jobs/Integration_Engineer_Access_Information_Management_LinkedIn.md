@@ -15,7 +15,7 @@
 
 ## Fit Score
 
-- Score: 92/100
+- Score: 60/100
 
 ## Extracted Skills
 
@@ -27,6 +27,12 @@
 - Automation
 - Validation
 - Security / auth
+- Dell Boomi
+- NetSuite
+- Salesforce
+- ADP
+- ChatGPT Enterprise
+- Claude
 
 ## Missing Skills
 
@@ -34,6 +40,12 @@
 - SQL
 - APIs
 - Security / auth
+- Dell Boomi
+- NetSuite
+- Salesforce
+- ADP
+- ChatGPT Enterprise
+- Claude
 
 ## Relevant Resume Bullets
 

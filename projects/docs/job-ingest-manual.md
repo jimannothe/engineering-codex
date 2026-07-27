@@ -66,6 +66,24 @@ If you want stdout instead of a file:
 - matches the job against the current experience buckets
 - writes a markdown summary if `--out` is provided
 
+## Scoring Methods
+
+The ingest script has evolved through a few scoring approaches. The current model is the most reliable for ranking roles because it balances broad skill overlap with named-stack penalties.
+
+| Method | How it scored | Strengths | Weaknesses | Better than |
+| --- | --- | --- | --- | --- |
+| Keyword overlap only | Counted any matching words in the job text and summed them into a score | Fast and simple | Over-scored noisy pages, rewarded generic words, and produced false positives like `validation` or `integration` | Nothing; this was the first rough draft |
+| Broad bucket fit | Grouped keywords into buckets like `Python`, `SQL`, `Validation`, `Troubleshooting`, then scored by overlap with resume experience | Better recall, easier to read, and good for first-pass ranking | Still over-weighted generic words and could not distinguish stack-specific gaps | Keyword-only scoring |
+| Section-aware parsing | Read the visible title, company, location, description block, and requirements list first, then scored from that structured text | Much better title and location extraction, and fewer page-chrome false positives | Still needed stronger fit penalties for missing platform-specific tools | Broad bucket fit |
+| Specific-tool penalty model | Added explicit penalties for named tools and platforms like `Dell Boomi`, `NetSuite`, `Salesforce`, `ADP`, `ChatGPT Enterprise`, and `Claude` when they appear in the job but not in the resume evidence | Best precision for integration and platform-heavy roles, and scores now reflect real gap size | Slightly stricter, so a few jobs will score lower than before | Section-aware parsing alone |
+
+Practical rule:
+
+- use the current specific-tool penalty model for decision-making
+- use older broad scores only as a rough recall signal
+- trust a high score only when the job has both broad overlap and named-stack evidence
+- distrust any score that is high only because of generic words like `integration`, `validation`, `support`, or `automation`
+
 ## Review Step
 
 Always check the generated output before filing it.
@@ -78,6 +96,8 @@ Verify:
 - compensation, if present
 - extracted skills
 - matched experience
+- fit score and why it landed there
+- missing named tools or platform-specific evidence
 
 If the header looks wrong, the HTML export is probably noisy or incomplete. Re-save the page and try again.
 

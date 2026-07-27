@@ -15,7 +15,7 @@
 
 ## Fit Score
 
-- Score: 69/100
+- Score: 61/100
 
 ## Extracted Skills
 
@@ -26,6 +26,7 @@
 - Documentation
 - Automation
 - Agile
+- Claude
 
 ## Missing Skills
 
@@ -33,6 +34,7 @@
 - SQL
 - APIs
 - Agile
+- Claude
 
 ## Relevant Resume Bullets
 

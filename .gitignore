@@ -1,0 +1,9 @@
+# Personal resume artifacts
+/docs/resume/
+
+# Job snapshot HTML captures and their asset folders
+/projects/jobs/**/*.html
+/projects/jobs/**/*_files/
+
+# Local Python cache
+**/__pycache__/

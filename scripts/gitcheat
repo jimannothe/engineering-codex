@@ -10,6 +10,19 @@ usage:
 
 workflow:
   status -> add -> commit -> branch -> merge main -> push -> tag
+
+principles:
+  save often, but save meaningfully
+  one commit should represent one completed unit of work
+  keep unrelated changes out of the same commit
+  make a checkpoint before risky or broad changes
+  keep a known-good commit until the new path is verified
+  prefer small, reversible steps over large mixed changes
+
+recovery:
+  if one branch has mixed unrelated changes, split them before pushing
+  use stash or a temporary commit only as a parking spot, not as the final shape
+  prefer separate branches or worktrees for separate topics
 EOF
 }
 
@@ -34,6 +47,30 @@ Useful checks:
 - git branch --show-current
 - git log --oneline -5
 - git diff --stat
+- git status --short
+- git diff --cached --name-only
+
+Fix mixed-up repo structure:
+1. Save everything first:
+   - `git stash push -u -m "wip mixed changes"`
+2. Create one branch per topic:
+   - `git switch -c feat/<topic>`
+3. Restore the stash:
+   - `git stash pop`
+4. Keep only the files for that topic:
+   - use `git add -p` for partial hunks
+   - or `git restore --staged <path>` to unstage unrelated files
+5. Commit the clean slice:
+   - `git commit -m "topic: concise summary"`
+6. Repeat on a new branch for the next unrelated change:
+   - `git switch -c feat/<next-topic>`
+7. If the branches are already tangled in history:
+   - make a safety backup branch first
+   - use `git rebase -i` for recent commits
+   - use a separate worktree if the split is large or messy
+8. If generated files or private docs were committed by mistake:
+   - remove them from future commits with `.gitignore`
+   - if they are already in shared history, rewrite carefully and coordinate before force-pushing
 
 Merge flow:
 - finish work on your feature branch
@@ -47,6 +84,19 @@ Merge flow:
 If you want the feature branch on GitHub too:
 - `git push -u origin <feature-branch>`
 - keep the branch until the merge is verified, then delete it if desired
+
+Principles:
+- Commit often when you finish a coherent unit of work.
+- Treat commits like save points in a game:
+  - save after a quest is complete
+  - save before a boss fight or risky refactor
+  - do not mix unrelated quests into the same save
+  - keep a known-good checkpoint until the new path is tested
+- Use one commit for one idea when possible.
+- If a change is still in flux, keep it local until it settles.
+- If you need to experiment, branch first so the main line stays stable.
+- If the work touches docs, scripts, and generated notes, make sure the commit still has one clear purpose.
+- Prefer a series of clean checkpoints over one large, hard-to-review dump.
 EOF
     ;;
   *)

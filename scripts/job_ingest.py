@@ -18,6 +18,7 @@ Output:
 from __future__ import annotations
 
 import argparse
+import json
 import re
 from dataclasses import dataclass
 from html.parser import HTMLParser
@@ -206,6 +207,126 @@ SPECIFIC_TOOL_KEYWORDS = {
     "Confluence": ["confluence"],
 }
 
+COMMON_GENERIC_TERMS = {
+    "job summary",
+    "key responsibilities",
+    "responsibilities",
+    "requirements",
+    "qualifications",
+    "preferred",
+    "preferred qualifications",
+    "about the job",
+    "acerca del empleo",
+    "summary",
+    "company",
+    "location",
+    "remote",
+    "hybrid",
+    "onsite",
+    "on site",
+    "costa rica",
+    "san jose",
+    "san josé",
+    "support",
+    "validation",
+    "automation",
+    "integration",
+    "testing",
+    "documentation",
+    "troubleshooting",
+}
+
+COMMON_GENERIC_WORDS = {
+    "a",
+    "an",
+    "and",
+    "as",
+    "at",
+    "be",
+    "by",
+    "for",
+    "from",
+    "have",
+    "in",
+    "into",
+    "is",
+    "it",
+    "of",
+    "on",
+    "or",
+    "our",
+    "the",
+    "this",
+    "to",
+    "with",
+    "you",
+    "your",
+    "we",
+    "will",
+    "work",
+    "support",
+    "design",
+    "experience",
+    "responsibilities",
+    "requirements",
+    "preferred",
+    "required",
+    "summary",
+    "integration",
+    "engineer",
+    "qualification",
+    "qualifications",
+    "platform",
+    "platforms",
+    "system",
+    "systems",
+    "solution",
+    "solutions",
+    "technical",
+    "job",
+    "role",
+    "core",
+    "key",
+    "information",
+    "management",
+    "what",
+    "gain",
+    "hands-on",
+    "opportunity",
+    "document",
+    "monitor",
+    "related",
+    "this",
+    "experience",
+    "design",
+    "support",
+    "implementation",
+    "implement",
+    "maintain",
+    "building",
+    "build",
+    "existing",
+    "current",
+    "solution",
+    "solutions",
+    "team",
+    "teams",
+}
+
+BAD_TAIL_WORDS = {
+    "this",
+    "experience",
+    "support",
+    "design",
+    "related",
+    "role",
+    "roles",
+    "summary",
+    "opportunity",
+    "responsibilities",
+    "requirements",
+}
+
 
 class TextExtractor(HTMLParser):
     def __init__(self) -> None:
@@ -258,6 +379,7 @@ class JobSummary:
     missing_skills: list[str]
     relevant_bullets: list[tuple[str, str]]
     star_prompts: list[str]
+    candidate_terms: list[str]
     extracted_skills: list[str]
     matched_experience: list[str]
     source_url: str | None
@@ -335,6 +457,127 @@ def extract_requirement_bullets(soup: BeautifulSoup) -> list[str]:
             return bullets
         container = container.parent
     return []
+
+
+def is_candidate_term(term: str, known_terms: set[str]) -> bool:
+    normalized = normalize(term)
+    if not normalized:
+        return False
+    if normalized in known_terms:
+        return False
+    if normalized in COMMON_GENERIC_TERMS:
+        return False
+    if len(normalized) < 3:
+        return False
+    if normalized.isdigit():
+        return False
+    return True
+
+
+def extract_candidate_terms(job_text: str) -> list[str]:
+    text = collapse_spaces(job_text)
+    known_terms = {normalize(skill) for skill in SKILL_BUCKETS}
+    known_terms.update(normalize(skill) for skill in RESUME_SKILL_TAGS)
+    known_terms.update(normalize(label) for label in EXPERIENCE_DETAILS)
+    known_terms.update(normalize(label) for label in SPECIFIC_TOOL_KEYWORDS)
+
+    candidates: list[str] = []
+    patterns = [
+        r"\b(?:[A-Z]{2,}(?:[./-][A-Z0-9]+)?(?:\s+[A-Z0-9][A-Za-z0-9+./-]*){0,3})\b",
+        r"\b(?:[A-Z][A-Za-z0-9+./-]*(?:\s+[A-Z][A-Za-z0-9+./-]*){1,3})\b",
+        r"\b(?:[A-Za-z]+[A-Z][A-Za-z0-9+./-]*(?:\s+[A-Z][A-Za-z0-9+./-]*){0,3})\b",
+        r"\b[A-Z]{2,6}\b",
+    ]
+    for pattern in patterns:
+        for match in re.finditer(pattern, text):
+            term = collapse_spaces(match.group(0))
+            words = [w.strip(".,:;()[]{}") for w in term.split() if w.strip(".,:;()[]{}")]
+            if not words:
+                continue
+            if len(words) > 1:
+                generic_word_count = sum(1 for word in words if word.lower() in COMMON_GENERIC_WORDS)
+                has_tech_signal = bool(
+                    re.search(r"[+/.-]", term)
+                    or re.search(r"\b[A-Z]{2,6}\b", term)
+                    or re.search(r"[a-z][A-Z]", term)
+                    or re.search(r"\d", term)
+                )
+                tail = words[-1].lower()
+                if not has_tech_signal or generic_word_count >= len(words):
+                    continue
+                if tail in BAD_TAIL_WORDS:
+                    continue
+                if len(words) == 2 and tail in COMMON_GENERIC_WORDS and not (
+                    words[0].isupper() or re.search(r"[a-z][A-Z]", words[0]) or re.search(r"[+/.-]", words[0])
+                ):
+                    continue
+            elif not (
+                term.isupper()
+                or re.search(r"[+/.-]", term)
+                or re.search(r"[a-z][A-Z]", term)
+                or re.search(r"\d", term)
+            ):
+                continue
+            if is_candidate_term(term, known_terms) and term not in candidates:
+                candidates.append(term)
+
+    return candidates
+
+
+def write_terms_sidecar(html_path: Path, candidate_terms: list[str], source_url: str | None = None) -> Path:
+    out_path = html_path.with_suffix(".terms.json")
+    payload = {
+        "html_file": str(html_path),
+        "source_url": source_url,
+        "candidate_terms": candidate_terms,
+    }
+    out_path.write_text(json.dumps(payload, indent=2, ensure_ascii=True), encoding="utf-8")
+    return out_path
+
+
+def judge_terms(term_path: Path) -> list[str]:
+    data = json.loads(term_path.read_text(encoding="utf-8"))
+    terms = data.get("candidate_terms", [])
+    if not terms:
+        print("No candidate terms found.")
+        return []
+
+    print(f"Reviewing candidate terms from {term_path}")
+    for idx, term in enumerate(terms, start=1):
+        print(f"{idx}. {term}")
+    raw = input("Select terms to approve (comma-separated numbers, 'all', or 'none'): ").strip().lower()
+    if raw in {"", "none", "n"}:
+        selected: list[str] = []
+    elif raw == "all":
+        selected = list(terms)
+    else:
+        selected = []
+        indexes = set()
+        for part in raw.split(","):
+            part = part.strip()
+            if not part:
+                continue
+            if part.isdigit():
+                indexes.add(int(part))
+        for idx, term in enumerate(terms, start=1):
+            if idx in indexes:
+                selected.append(term)
+
+    approved_path = term_path.with_suffix(".approved.json")
+    approved_path.write_text(
+        json.dumps(
+            {
+                "html_file": data.get("html_file"),
+                "source_url": data.get("source_url"),
+                "approved_terms": selected,
+            },
+            indent=2,
+            ensure_ascii=True,
+        ),
+        encoding="utf-8",
+    )
+    print(f"Wrote {approved_path}")
+    return selected
 
 
 def experience_score(job_text: str, experience: str) -> int:
@@ -507,6 +750,8 @@ def build_summary(html_path: Path, source_url: str | None = None) -> JobSummary:
     match_text = " ".join(part for part in [html_title, description, " ".join(requirements)] if part)
 
     skills = extract_skills(match_text)
+    candidate_source = " ".join(part for part in [description, " ".join(requirements)] if part)
+    candidate_terms = extract_candidate_terms(candidate_source)
     experience = match_experience(match_text)
     relevant_experiences = select_relevant_experience(match_text)
     fit_score = 0
@@ -556,6 +801,7 @@ def build_summary(html_path: Path, source_url: str | None = None) -> JobSummary:
         missing_skills=missing_skills,
         relevant_bullets=relevant_bullets,
         star_prompts=star_prompts,
+        candidate_terms=candidate_terms,
         extracted_skills=skills,
         matched_experience=experience,
         source_url=source_url,
@@ -568,6 +814,7 @@ def render_markdown(summary: JobSummary, html_path: Path) -> str:
     missing_block = "\n".join(f"- {skill}" for skill in summary.missing_skills) or "- None identified"
     bullets_block = "\n".join(f"- [{label}] {bullet}" for label, bullet in summary.relevant_bullets) or "- None identified"
     star_block = "\n".join(f"- {item}" for item in summary.star_prompts) or "- None identified"
+    candidate_block = "\n".join(f"- {item}" for item in summary.candidate_terms) or "- None found"
     source = summary.source_url or "Not provided"
     return f"""# Job Ingest Summary
 
@@ -604,6 +851,12 @@ def render_markdown(summary: JobSummary, html_path: Path) -> str:
 
 {star_block}
 
+## Candidate New Terms
+
+These are saved separately in a `.terms.json` sidecar for review.
+
+{candidate_block}
+
 ## Relevant Experience
 
 {exp_block}
@@ -621,6 +874,7 @@ def ingest_html_file(html_path: Path, source_url: str | None = None, out_path: P
     target = out_path if out_path else html_path.with_suffix(".md")
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(markdown, encoding="utf-8")
+    write_terms_sidecar(html_path, summary.candidate_terms, source_url=source_url)
     return target
 
 
@@ -647,6 +901,7 @@ def main() -> int:
     parser.add_argument("--url", help="Optional source URL for the job.")
     parser.add_argument("--resume", help="Optional path to the master resume file for future expansion.")
     parser.add_argument("--out", help="Optional output path for the generated markdown summary.")
+    parser.add_argument("--judge", action="store_true", help="Review the saved candidate terms and approve selected ones.")
     args = parser.parse_args()
 
     if args.dir:
@@ -668,6 +923,8 @@ def main() -> int:
     out_path = Path(args.out).expanduser().resolve() if args.out else None
     written = ingest_html_file(html_path, source_url=args.url, out_path=out_path)
     print(f"Wrote {written}")
+    if args.judge:
+        judge_terms(html_path.with_suffix(".terms.json"))
     return 0
 
 

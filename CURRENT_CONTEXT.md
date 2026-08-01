@@ -18,6 +18,7 @@ Updated: 2026-07-25
 - Movable Ink support-target resume has been created
 - Teradyne support-target resume has been created
 - Haystack software-engineer target resume has been created
+- Cohesity technical-support target resume has been created
 
 ## Next Action
 
@@ -36,6 +37,7 @@ Updated: 2026-07-25
 - `docs/resume/movable-ink-tech-support-target.tex`
 - `docs/resume/teradyne-app-support-target.tex`
 - `docs/resume/haystack-software-engineer-target.tex`
+- `docs/resume/cohesity-tech-support-target.tex`
 - `templates/resume-skeleton.tex`
 
 ## Last Decision
@@ -51,6 +53,7 @@ Updated: 2026-07-25
 - The Movable Ink tailored resume is ready for application work.
 - The career skill tracker and hiring-skills project are in place.
 - The Teradyne and Haystack tailored resumes are ready for application work.
+- The Cohesity tailored resume is ready for application work.
 
 ## Waiting On
 

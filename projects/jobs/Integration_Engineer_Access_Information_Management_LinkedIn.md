@@ -3,7 +3,7 @@
 ## Source
 
 - HTML file: `/home/jman/engineering-codex/projects/jobs/Integration_Engineer_Access_Information_Management_LinkedIn.html`
-- URL: Not provided
+- URL: test://integration
 
 ## Inferred Fields
 
@@ -58,6 +58,39 @@
 
 - Describe a validation issue you isolated with logs or telemetry, how you automated part of the workflow, and how you helped validate the fix.
 - Describe a validation workflow you improved with automation or CI/CD and how that reduced time to reproduce or diagnose failures.
+
+## Candidate New Terms
+
+These are saved separately in a `.terms.json` sidecar for review.
+
+- SQL Server
+- AI Platform
+- LLM APIs
+- API
+- CRM
+- ERP
+- PII
+- REST/SOAP
+- JSON
+- HRIS
+- SSO
+- AI/LLM
+- AWS Secrets Manager
+- AI Integration Enginee
+- Monitor AI-related
+- Document AI
+- Azure OpenAI
+- iPaaS
+- AI-powered
+- API-based
+- AI-related
+- MuleSoft
+- OpenAI
+- LLM
+- REST
+- SOAP
+- XML
+- AWS
 
 ## Relevant Experience
 

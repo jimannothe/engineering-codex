@@ -19,6 +19,7 @@ This keeps the process fast while avoiding browser automation or LinkedIn login 
 - Wrapper command: [`/home/jman/engineering-codex/scripts/job_ingest`](/home/jman/engineering-codex/scripts/job_ingest)
 - New-job template: [`/home/jman/engineering-codex/jobs/new-job.md`](/home/jman/engineering-codex/jobs/new-job.md)
 - Skill tracker: [`/home/jman/engineering-codex/projects/career-skill-tracker.md`](/home/jman/engineering-codex/projects/career-skill-tracker.md)
+- Score comparison report: [`/home/jman/engineering-codex/projects/docs/job-score-comparison.md`](/home/jman/engineering-codex/projects/docs/job-score-comparison.md)
 
 ## Inputs
 
@@ -59,12 +60,28 @@ If you want stdout instead of a file:
   --url 'https://www.linkedin.com/jobs/view/4443049539/'
 ```
 
+If you want to review and approve candidate new terms:
+
+```bash
+printf '1,2\n' | /home/jman/engineering-codex/scripts/job_ingest \
+  --html '/home/jman/engineering-codex/projects/jobs/Integration_Engineer_Access_Information_Management_LinkedIn.html' \
+  --url 'https://www.linkedin.com/jobs/view/4443049539/' \
+  --judge
+```
+
+That creates two sidecar files:
+
+- `.../Integration_Engineer_Access_Information_Management_LinkedIn.terms.json`
+- `.../Integration_Engineer_Access_Information_Management_LinkedIn.terms.approved.json`
+
 ## What the Script Does
 
 - extracts a job header from the saved HTML
 - pulls a rule-based skill list from the posting text
 - matches the job against the current experience buckets
 - writes a markdown summary if `--out` is provided
+- writes candidate new terms into a separate `.terms.json` sidecar
+- can prompt you to approve selected terms with `--judge`
 
 ## Scoring Methods
 
@@ -120,6 +137,13 @@ If the job adds a new repeated skill, update:
 - [`/home/jman/engineering-codex/projects/career-acceleration.md`](/home/jman/engineering-codex/projects/career-acceleration.md)
 
 Only increase counts when the skill actually appears in another reviewed job.
+
+For candidate terms, use this rule:
+
+- inspect the `.terms.json` sidecar after ingest
+- approve only terms that are clearly transferable technologies, platforms, or tools
+- reject page-chrome phrases, generic job wording, and company-specific nouns
+- when you approve a term, consider adding it to the skill model or the tracker only if it appears in more than one job
 
 ## Rules
 

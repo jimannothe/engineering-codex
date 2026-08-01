@@ -71,6 +71,26 @@ The focus is not just writing code. The focus is building a maintainable system 
 - Use helper commands when they reduce repetitive work.
 - Keep behavior easy to verify with tests or checks.
 
+### Git Notes
+
+Use Git to save clean checkpoints, not mixed-up snapshots.
+
+Example recovery flow for a tangled branch:
+
+1. Park everything with `git stash push -u`.
+2. Create one branch per topic.
+3. Restore the stash.
+4. Keep only the files for that topic with `git add -p` or `git restore --staged`.
+5. Commit the clean slice.
+6. Repeat for the next unrelated change.
+
+If the history is already tangled:
+
+- make a safety backup branch first
+- use `git rebase -i` for recent commits
+- use a separate worktree when the split is large
+- rewrite shared history carefully before force-pushing
+
 ### References
 
 Internal:
@@ -103,6 +123,69 @@ External:
 - Robotics: 3D printer restoration, CAD, mechanical design, quadcopter, autonomous systems
 - Artificial Intelligence: machine learning, LLM applications, agents, RAG, automation
 - Quantitative Research: statistics, probability, time series, financial data, research automation
+
+## AI Software Design Principles
+
+This section defines how AI should be used in software design work inside the Academy.
+
+The rule is not "use AI everywhere" and not "avoid AI completely." The rule is to use AI where it adds judgment speed, while keeping the structural work local, repeatable, and testable.
+
+### Core Principles
+
+- Use local scripts for parsing, extraction, scoring, tracking, and repeatable workflows.
+- Use AI for ambiguity: judgment, ranking, summarization, and story generation.
+- Keep the deterministic part of the system outside the model whenever possible.
+- Add a human approval step before promoting new skills, new scoring rules, or new claims.
+- Treat AI output as a draft unless it has been verified against source material.
+- Prefer a small toolchain that can be rerun over a large prompt that must be recreated.
+- Save the human-visible state in files and Git, not only in chat history.
+
+### Practical Division of Labor
+
+Scripts should handle:
+
+- HTML and text extraction
+- rule-based keyword detection
+- candidate term collection
+- baseline scoring
+- folder iteration and batch processing
+- report generation
+
+AI should handle:
+
+- whether a role is truly worth targeting
+- how to interpret ambiguous terms in context
+- which skills are transferable versus noise
+- STAR story drafting
+- resume tailoring language
+- tradeoff analysis between speed, accuracy, and effort
+
+Human review should handle:
+
+- final skill promotion
+- final fit judgment when the score is borderline
+- resume claims that affect credibility
+- any new scoring rule that changes the model materially
+
+### Learning Objective
+
+After this section, a student should be able to explain:
+
+- why local scripts scale better than prompt-only workflows
+- why AI is still useful for judgment and synthesis
+- how to design a workflow with a deterministic core and an AI review layer
+- when a new term should become a tracked skill and when it should stay a candidate term
+
+### Example Application
+
+For job analysis:
+
+- save the HTML locally
+- run the ingest script
+- inspect extracted skills and candidate terms
+- use AI to evaluate fit and draft stories
+- approve or reject new terms manually
+- commit the result as a durable checkpoint
 
 ## Career Income Optimization Track
 

@@ -44,6 +44,122 @@ Each course or track should define:
 - thesis project
 - reflection
 
+## Resources
+
+This section tracks the concrete things available for learning, validation, and project work.
+
+Keep the inventory practical and easy to search. Each entry should explain what it is, where it lives, and why it matters.
+
+### Hardware
+
+Include physical equipment used in the repo or related labs:
+
+- devices
+- microcontrollers
+- PCs
+- systems
+- development boards
+- peripherals
+- lab hardware
+- current PC
+- Intel NUC
+
+For each hardware item, record:
+
+- name
+- model or identifier
+- location
+- purpose
+- current status
+- relevant notes
+
+Current hardware inventory:
+
+- Current PC: Lenovo `81WA` (`DevelopersDen`) - fill in details later
+- Intel NUC - fill in details later
+
+### Library
+
+Include reference material that supports study and implementation:
+
+- books
+- manuals
+- PDFs
+- papers
+- vendor documentation
+- saved notes or reference collections
+- Calibre library titles
+
+For each library item, record:
+
+- title
+- author or source
+- topic
+- location
+- why it is useful
+
+Full Calibre title inventory:
+
+- [projects/docs/calibre-library-titles.md](/home/jman/engineering-codex/projects/docs/calibre-library-titles.md)
+
+### Software
+
+Include software assets used for learning and building:
+
+- local tools
+- scripts
+- packages
+- applications
+- repos
+- utilities
+- test harnesses
+
+For each software item, record:
+
+- name
+- version or source
+- purpose
+- where it is installed or stored
+- status
+- dependencies or special setup notes
+
+## Environment
+
+This section tracks the working environment used to read, write, and operate the repo.
+
+The goal is to keep the toolchain explicit so it can be tuned over time instead of living in memory.
+
+### Core Tools
+
+- `zathura`
+- `tmux`
+- `nvim`
+- shell
+- terminal emulator
+- window manager or desktop environment
+
+### Suggested Tracking Fields
+
+For each environment tool, record:
+
+- name
+- role in the workflow
+- config location
+- current status
+- desired changes
+- notes
+
+### Current Intent
+
+Use this section to list the tools that form the daily work environment, then customize them from a known baseline.
+
+Example use:
+
+- `zathura` for reading manuals and PDFs
+- `tmux` for persistent terminal sessions
+- `nvim` for editing notes, scripts, and docs
+- shell aliases and functions for repeated commands
+
 ## Codex Software Engineering
 
 This is the software engineering track for the Engineering Codex itself.

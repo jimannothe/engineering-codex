@@ -207,6 +207,32 @@ If the history is already tangled:
 - use a separate worktree when the split is large
 - rewrite shared history carefully before force-pushing
 
+Reference:
+
+- `projects/docs/git-branch-strategy.md`
+
+### Git Branch Strategy
+
+Git as data structures:
+
+- commit graph is a DAG
+- branches are refs pointing at commits
+- `HEAD` points to the current branch or commit
+- index is the staged snapshot
+- working tree is your edited files
+
+Practical branch rules:
+
+- keep `main` stable
+- use one integration branch per major project or learning track
+- use one short-lived task branch per deliverable
+- keep unrelated work out of project branches
+- name branches after the work, not the files
+- commit at logical checkpoints
+- keep each commit small enough to review and revert cleanly
+
+See `projects/docs/git-branch-strategy.md` for the full policy and branch lifecycle.
+
 ### References
 
 Internal:
@@ -333,6 +359,44 @@ Use a 4-week baseline plan first, then optimize later from results.
 This time frame is intentionally adjustable. If a lane proves stronger, shorten or extend the plan based on conversion results.
 
 ### Study Blocks
+
+#### Software Fundamentals Block
+
+Study:
+
+- repository basics
+- `HEAD`, branch refs, index, and working tree
+- staging and committing
+- branching and switching
+- merge and rebase fundamentals
+- conflict resolution
+- remote tracking branches
+- stash and recovery
+
+Practice:
+
+- create a branch for one topic
+- make a clean commit
+- inspect `git status --short --branch`
+- compare `HEAD` to the branch tip
+- resolve one simple conflict
+- explain the data-structure model in your own words
+
+Outcome:
+
+- be able to explain Git as a set of data structures and use it confidently as part of software fundamentals
+- be able to save clean checkpoints and recover from a tangled working tree
+- be able to describe how changes move from working tree to index to commit graph
+
+Commit balance:
+
+- commit at logical checkpoints, not after every tiny edit
+- keep each commit small enough to review and revert cleanly
+- avoid giant mixed commits that combine unrelated changes
+- avoid ultra-tiny commits that do not represent a meaningful unit of work
+- if a change can be described in one sentence, it is usually commit-ready
+- if the sentence needs multiple `and also`s, split it first
+- commit when the branch is in a clean, understandable state, not only when everything is perfect
 
 #### Support / Systems Block
 

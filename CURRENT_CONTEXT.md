@@ -1,6 +1,6 @@
 # Current Context
 
-Updated: 2026-07-25
+Updated: 2026-08-01
 
 ## Active Project
 
@@ -22,7 +22,8 @@ Updated: 2026-07-25
 
 ## Next Action
 
-- Turn the strongest experience into clearer resume bullets and defensible interview stories.
+- Turn the strongest experience into clearer resume bullets, a coherent narrative, and defensible interview stories.
+- Use the post-ingest action plan to rank each role's most important aspects before closing gaps.
 - Use the career skill tracker to keep the most requested skills current.
 - Rank the next roles in the search system and build the next highest-value offer subproject.
 
@@ -44,7 +45,7 @@ Updated: 2026-07-25
 
 - Main career work should be organized as one project with offer-specific subprojects and area-based tracks.
 - The first tracked offer subproject should be Movable Ink Technical Support Specialist.
-- Every offer should now follow the same loop: validate against the CV, score it, extract gaps, and turn the gaps into an action plan.
+- Every offer should now follow the same loop: validate against the CV, score it, extract gaps, build a narrative, rank the role priorities, and turn the gaps into an action plan.
 - Experiment 1 ranked the current roles as Movable Ink first, LanceSoft second, and Stryker third.
 - Zuora SRE II is a separate maybe-target that sits below Movable Ink and near LanceSoft because the SRE stack gap is still large.
 - The prep plan should focus on interview readiness, not field mastery.

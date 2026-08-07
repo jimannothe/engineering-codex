@@ -101,6 +101,23 @@ Practical rule:
 - trust a high score only when the job has both broad overlap and named-stack evidence
 - distrust any score that is high only because of generic words like `integration`, `validation`, `support`, or `automation`
 
+## Score Ranges
+
+Use the score as a ranking signal, then make the final decision by title, stack, and gap size.
+
+- `80-95`: strong target
+- `70-79`: target if the role matches the lane you want
+- `60-69`: maybe, only if it is strategically useful or easy to tailor
+- `0-59`: usually skip
+
+Suggested decision rule:
+
+- `target` = `70+`
+- `maybe` = `60-69`
+- `skip` = `<60`
+
+For the Cohesity-style support lane, anything at `65+` is worth a real review, and `75+` is the sweet spot for high-confidence applications.
+
 ## Review Step
 
 Always check the generated output before filing it.
@@ -117,6 +134,36 @@ Verify:
 - missing named tools or platform-specific evidence
 
 If the header looks wrong, the HTML export is probably noisy or incomplete. Re-save the page and try again.
+
+## Post-Ingest Action Plan
+
+After the ingest is filed, convert the raw summary into a usable job-specific plan.
+
+### Step 1: Build the narrative
+
+- Turn the resume evidence into one coherent story.
+- Explain how the current experience connects to the role.
+- Keep the story consistent across the job note, resume map, and interview prep.
+
+### Step 2: Rank the role priorities
+
+- Identify what matters most for this specific seniority level.
+- Separate the core signals from the nice-to-have keywords.
+- Rank the skills, behaviors, and proof points by importance.
+
+### Step 3: Close the highest-value gaps
+
+- Choose only the gaps that materially affect the score or interview likelihood.
+- Turn each high-value gap into one proof artifact, lab, or story.
+- Avoid broad study that does not strengthen the specific role.
+
+### Step 4: Check the output
+
+- Revisit the score bands.
+- Decide whether the role is a target, maybe, or skip.
+- Update the resume and interview stories only where the evidence is strong enough.
+
+Use this action plan to turn the ingest into a repeatable career workflow instead of leaving it as a list of extracted terms.
 
 ## File the Job Note
 

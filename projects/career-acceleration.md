@@ -45,6 +45,7 @@ It contains:
 - reusable templates for tailoring and follow-up
 - career hiring skills and STAR story bank
 - outcome tracking
+- job ingest, role investigation, narrative building, and gap closure workflows
 
 ## Required Skills
 
@@ -147,6 +148,19 @@ After the matrix, each offer should also be:
 - converted into a concrete action plan
 
 This is the standard loop for every position.
+
+## Offer Workflow
+
+Use this sequence for every new role.
+
+1. Ingest the job posting into a structured note.
+2. Investigate similar positions to understand the real work, common expectations, and adjacent role patterns.
+3. Validate the role against the current CV and proof set.
+4. Score the role and classify it as target, maybe, or skip.
+5. Build a narrative from current experience that explains why the role fits.
+6. Rank the most important aspects of the position for that seniority level.
+7. Turn only the highest-value gaps into labs, stories, or proof artifacts.
+8. Tailor the resume and interview prep from the resulting evidence.
 
 ## Default Prep Workflow
 
@@ -257,6 +271,16 @@ Before changing anything answer:
 - What gaps are blocking interviews or offers?
 - What can be automated or templatized?
 
+For each offer, also investigate similar positions before finalizing the action plan:
+
+- What do comparable roles at adjacent companies actually emphasize?
+- What recurring duties show up across the same job family?
+- What does the real day-to-day support workflow look like?
+- What investigation, documentation, or escalation behavior is expected?
+- Which missing skills are truly blocking versus just nice-to-have?
+
+Use the comparison to keep the target role grounded in market reality rather than one posting's wording.
+
 ## Knowledge Gaps
 
 - [ ] target role list
@@ -289,7 +313,10 @@ External:
 - [ ] inventory resume, LinkedIn, and portfolio assets
 - [ ] define weighted scoring for target roles
 - [ ] add CV validation to every offer subproject
+- [ ] add similar-role investigation to every offer subproject
 - [ ] add gap-to-action planning to every offer subproject
+- [ ] add narrative building to every offer subproject
+- [ ] add priority analysis to every offer subproject
 - [ ] create a ranked target list with target/maybe/skip labels
 - [ ] connect recruiter messages to the search operations system
 - [ ] create one template per offer subproject
@@ -298,6 +325,7 @@ External:
 - [ ] define interview prep checklist
 - [ ] build the career hiring skills project
 - [ ] turn the Movable Ink technical support role into the first tracked offer subproject
+- [ ] apply the same loop to the Cohesity support role and future offer subprojects
 - [ ] fill the first fit matrix with evidence, gaps, score, and actions
 
 ## Current Context
@@ -355,7 +383,9 @@ How will I prove this project works?
 
 - I can create a new offer subproject from the template.
 - I can rank roles before spending time on them.
+- I can investigate similar roles and explain what the job actually looks like.
 - Each offer has a clear next action and status.
+- Each offer has a narrative and a priority analysis before I close gaps.
 - Application materials are easy to tailor.
 - I can see which areas are producing results.
 - The process is resumable from `CURRENT_CONTEXT.md`.
@@ -369,6 +399,8 @@ The project is complete when:
 - the search operations system is in use
 - offer subprojects are tracked consistently
 - materials are reusable and easy to tailor
+- similar-role investigation is part of the flow
+- narrative building and priority analysis happen for each offer
 - interview prep is organized
 - results are measurable
 - the workflow can be resumed without confusion

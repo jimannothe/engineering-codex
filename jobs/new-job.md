@@ -37,11 +37,25 @@ Decide whether this is a target role, tailor the resume if needed, and prepare a
 | --- | --- | --- | --- |
 |  |  |  |  |
 
-## Gap Closure Plan
+## Narrative
+
+- Current experience thread:
+- Why this role fits the thread:
+- Best proof points:
+
+## Action Plan
 
 1. 
 2. 
 3. 
+4. 
+
+## Priority Analysis
+
+- What matters most for this level:
+- Core signals:
+- Nice-to-have signals:
+- What to ignore:
 
 ## Tailoring
 
